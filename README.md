@@ -45,16 +45,37 @@ Copy code
    git clone https://github.com/ultralytics/yolov5.git
 Navigate to the YOLOv5 directory:
 
-bash
-Copy code
-cd yolov5
+2. Move to the yolov5 directory:
+
+   ```bash
+   cd yolov5
 Install the required dependencies:
 
-bash
-Copy code
+```bash
 pip install -U -r requirements.txt
-    
-## Training the YOLOv5 Classification Model 
+
+dataset/
+├── train/
+│   ├── helmet/
+│   │   ├── image1.jpg
+│   │   ├── image2.jpg
+│   │   └── ...
+│   ├── no_helmet/
+│   │   ├── image3.jpg
+│   │   ├── image4.jpg
+│   │   └── ...
+└── test/
+    ├── helmet/
+    │   ├── test_image1.jpg
+    │   ├── test_image2.jpg
+    │   └── ...
+    ├── no_helmet/
+    │   ├── test_image3.jpg
+    │   ├── test_image4.jpg
+    │   └── ...
+
+
+## Training the YOLOv5 Classification Model:
 
 python train.py --img 640 --batch 16 --epochs 50 --data dataset/data.yaml --cfg models/yolov5s.yaml --weights '' --name helmet_detection
 Adjust the parameters according to your dataset and requirements.
